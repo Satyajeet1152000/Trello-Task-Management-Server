@@ -35,13 +35,11 @@ app.use((req, res) => {
 mongoose
     .connect(process.env.DB_URL)
     .then(() => {
-        console.log(process.env.DB_URL);
         console.log("Mongoose Database connected successfully.");
         app.listen(PORT, () => {
             console.log(`Server is listinning on port : ${PORT}`);
         });
     })
     .catch((err) => {
-        console.log(process.env.DB_URL);
         console.log(`Mongoose Database connection error. : ${err}`);
     });
