@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import cors from "cors";
 
 import authRoutes from "./routes/auth.js";
 import taskRoutes from "./routes/task.js";
@@ -15,6 +16,7 @@ mongoose.set("strictQuery", false);
 
 // =================== Middleware ====================
 app.use(bodyParser.json());
+app.use(cors());
 
 // ================= Routes =================
 app.use("/api/auth", authRoutes);
